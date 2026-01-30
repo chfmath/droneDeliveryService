@@ -31,10 +31,6 @@ graph LR
     C --> H[DeliveryHistoryService]
     G --> D
     H --> E
-    
-    style E fill:lightgreen
-    style F fill:orange
-    style D fill:lightblue
 ```
 
 ## Data Model
