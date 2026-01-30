@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: DDS
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/dds}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+logging:
+  level:
+    dds: DEBUG
+
+
+info:
+  app:
+    name: DDS
+    description: DDS
+    version: 0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, env
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+server:
+  port: 8080
+
+ilp:
+  service:
+    url: ${ILP_SERVICE_URL}
